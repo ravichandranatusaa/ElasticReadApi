@@ -61,6 +61,14 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- add the x-pack jar as a dependency -->
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>x-pack-transport</artifactId>
+			<version>5.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -71,6 +79,23 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<repositories>
+		<!-- add the elasticsearch repo -->
+		<repository>
+			<id>elasticsearch-releases</id>
+			<url>https://artifacts.elastic.co/maven</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
 
 
 </project>
